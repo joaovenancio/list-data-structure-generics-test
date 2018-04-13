@@ -1,4 +1,28 @@
 package com.joaovenancio;
 
-public class ListaOrdenada {
+public class ListaOrdenada<E extends IOrdenavel> {
+    //Atributos:
+    private Lista<E> lista;
+
+    //Construtor:
+    public ListaOrdenada() {
+        this.lista = new Lista<E>();
+    }
+
+    //Metodos:
+    public void inserirOrdenado (E objetoParaInserir) {
+
+    }
+
+    public void excluir (int ID) {
+        this.lista.excluir(ID);
+    }
+
+    public E buscar (int ID) {
+        return this.lista.buscarDadoPelaID(ID).getDado();
+    }
+
+    public void printarLista () {
+        this.lista.printarLista();
+    }
 }

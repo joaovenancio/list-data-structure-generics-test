@@ -1,13 +1,13 @@
 package com.joaovenancio;
 
-public class DadosLista<E extends IOrdenavel> {
+public class DadoLista<E extends IOrdenavel> {
     //Atributos:
     private E dado;
-    private DadosLista<E> proximoDado;
+    private DadoLista<E> proximoDado;
     private int dadoID;
 
     //Construtor:
-    public DadosLista(E dado, DadosLista<E> proximoDado) {
+    public DadoLista(E dado, DadoLista<E> proximoDado) {
         this.dado = dado;
         this.proximoDado = proximoDado;
         if (dado == null) {
@@ -22,11 +22,11 @@ public class DadosLista<E extends IOrdenavel> {
         return dado;
     }
 
-    public DadosLista<E> getProximo() {
+    public DadoLista<E> getProximo() {
         return proximoDado;
     }
 
-    public void setProximoDado(DadosLista<E> proximoDado) {
+    public void setProximoDado(DadoLista<E> proximoDado) {
         this.proximoDado = proximoDado;
     }
 
@@ -35,7 +35,7 @@ public class DadosLista<E extends IOrdenavel> {
      * retorna 0 ou um ID setado pelo metodo setDadoID().
      *
      * @return the ID from the Generic Object extended from the IOrdenavel Interface..
-     * @return 0 or any setable int (by setDadoID() method) if this DadosLista doesn't have any Generic Object.
+     * @return 0 or any setable int (by setDadoID() method) if this DadoLista doesn't have any Generic Object.
      */
     public int getDadoID () {
         if (this.dado == null) {
