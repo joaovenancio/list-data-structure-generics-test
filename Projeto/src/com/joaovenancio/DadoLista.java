@@ -30,12 +30,12 @@ public class DadosLista<E extends IOrdenavel> {
         this.proximoDado = proximoDado;
     }
 
-    /*
-    * Ele ve se existe algum dado de Objeto, se tiver, retorna o ID desse objeto, caso contrario,
-    * retorna 0 ou um ID setado pelo metodo setDadoID().
-    *
-    * @return the ID from the Generic Object extended from the IOrdenavel Interface..
-    * @return 0 or any setable int (by setDadoID() method) if this DadosLista doesn't have any Generic Object.
+    /**
+     * Ele ve se existe algum dado de Objeto, se tiver, retorna o ID desse objeto, caso contrario,
+     * retorna 0 ou um ID setado pelo metodo setDadoID().
+     *
+     * @return the ID from the Generic Object extended from the IOrdenavel Interface..
+     * @return 0 or any setable int (by setDadoID() method) if this DadosLista doesn't have any Generic Object.
      */
     public int getDadoID () {
         if (this.dado == null) {
