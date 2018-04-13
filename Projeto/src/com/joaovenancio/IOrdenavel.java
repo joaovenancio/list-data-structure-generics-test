@@ -1,8 +1,8 @@
 package com.joaovenancio;
 
-public interface IOrdenavel<E> {
+public interface IOrdenavel {
     //Atributos:
-    int ID = 0;
+    static int ID = 0;
 
 
     //Metodos:

@@ -2,7 +2,7 @@ package com.joaovenancio;
 
 public class Main {
 
-    public class Teste implements IOrdenavel<Integer>{
+    public class Teste implements IOrdenavel{
 
 
 
