@@ -37,9 +37,6 @@ public class Lista<E extends IOrdenavel> {
     }
 
     public void inserirDepoisDe (int ID, E novoObjeto) {
-        DadoLista<E> auxilairInclusao = new DadoLista<E>(null, null);
-        auxilairInclusao.setDadoID(ID);
-        this.ultimoLista.setProximoDado(auxilairInclusao);
 
         if (this.qtdElementos == 0) { //Se nao tiver nenhum valor na lista:
             this.primeiroLista = new DadoLista<E>(novoObjeto, null); //Adicionar um novo objeto no inicio, nao existe nenhum
@@ -55,14 +52,21 @@ public class Lista<E extends IOrdenavel> {
                 this.qtdElementos++;
             }
         } else {
-            while (auxilairInclusao.getProximo().getDadoID() <= ID) { //Prourar pela menor ID antes do que eu quero achar
+            DadoLista<E> auxilairPesquisa = new DadoLista<E>(null, null);
+            auxilairPesquisa.setDadoID(ID);
+            this.ultimoLista.setProximoDado(auxilairPesquisa);
+
+            DadoLista<E> auxilairInclusao = this.primeiroLista;
+
+            while (auxilairInclusao.getProximo().getDadoID() < ID) { //Prourar pela menor ID antes do que eu quero achar
                 auxilairInclusao = auxilairInclusao.getProximo();
             }
             if (auxilairInclusao.getProximo().equals(this.ultimoLista.getProximo())) { //Caso ele for o ultimo a ser inserido:
                 this.ultimoLista.setProximoDado(null);
                 this.inserirNoFinal(novoObjeto); //Ja faz qtdElementos++
             } else { //Inserir depois da menor aparicao do ID selecionado ou no ID selecionado:
-                auxilairInclusao.setProximoDado(new DadoLista<E>(novoObjeto, auxilairInclusao.getProximo().getProximo()));
+                this.ultimoLista.setProximoDado(null);
+                auxilairInclusao.setProximoDado(new DadoLista<E>(novoObjeto, auxilairInclusao.getProximo()));
                 this.qtdElementos++;
             }
         }
@@ -90,20 +94,24 @@ public class Lista<E extends IOrdenavel> {
                 this.primeiroLista = this.primeiroLista.getProximo();
                 this.qtdElementos--;
             } else {
-                DadoLista<E> auxilairExclusao = new DadoLista<E>(null, null);
-                auxilairExclusao.setDadoID(ID);
-                this.ultimoLista.setProximoDado(auxilairExclusao);
+                DadoLista<E> auxilairPesquisa = new DadoLista<E>(null, null);
+                auxilairPesquisa.setDadoID(ID);
+                this.ultimoLista.setProximoDado(auxilairPesquisa);
+
+                DadoLista<E> auxilairExclusao = this.primeiroLista;
+
                 while (auxilairExclusao.getProximo().getDadoID() != ID) {
                     auxilairExclusao = auxilairExclusao.getProximo();
                 }
-                if (auxilairExclusao.equals(this.ultimoLista.getProximo())) {
+                if (auxilairExclusao.getProximo().equals(this.ultimoLista.getProximo())) {
                     this.ultimoLista.setProximoDado(null);
                     throw new RuntimeException("Não foi encontrado o dado para ser exlcuido.");
                 } else {
                     this.ultimoLista.setProximoDado(null);
-                    if (auxilairExclusao.getProximo().equals(this.ultimoLista)) {
-                        this.ultimoLista = auxilairExclusao;
+
+                    if (auxilairExclusao.getProximo().equals(this.ultimoLista)) { //Problema aqui
                         auxilairExclusao.setProximoDado(null);
+                        this.ultimoLista = auxilairExclusao;
                         this.qtdElementos--;
                     } else {
                         auxilairExclusao.setProximoDado(auxilairExclusao.getProximo().getProximo());
@@ -134,11 +142,15 @@ public class Lista<E extends IOrdenavel> {
         }
     }
 
+    public int getQtdElementos () {
+        return this.qtdElementos;
+    }
+
     //Teste:
     public void printarLista () {
         DadoLista<E> auxilair = this.primeiroLista;
         while (auxilair != null) {
-            System.out.println(auxilair.getDado());
+            System.out.println(auxilair.getDadoID());
             auxilair = auxilair.getProximo();
         }
     }

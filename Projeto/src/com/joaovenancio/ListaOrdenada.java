@@ -11,7 +11,13 @@ public class ListaOrdenada<E extends IOrdenavel> {
 
     //Metodos:
     public void inserirOrdenado (E objetoParaInserir) {
-
+        if (objetoParaInserir.getID() < 0) {
+            throw new RuntimeException("Só é aceito IDs positivos.");
+        } else if (objetoParaInserir.getID() == 0) {
+            this.lista.inserirDepoisDe(0,objetoParaInserir);
+        } else {
+            this.lista.inserirDepoisDe(objetoParaInserir.getID(), objetoParaInserir);
+        }
     }
 
     public void excluir (int ID) {
@@ -24,5 +30,9 @@ public class ListaOrdenada<E extends IOrdenavel> {
 
     public void printarLista () {
         this.lista.printarLista();
+    }
+
+    public int getQtdElementos () {
+        return this.lista.getQtdElementos();
     }
 }
