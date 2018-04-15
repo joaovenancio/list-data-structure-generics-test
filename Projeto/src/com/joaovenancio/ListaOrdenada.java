@@ -23,7 +23,7 @@ public class ListaOrdenada<E extends IOrdenavel> {
     }
 
     public void excluir (int ID) {
-        this.lista.excluir(ID);
+            this.lista.excluir(ID);
     }
 
     public E buscar (int ID) {

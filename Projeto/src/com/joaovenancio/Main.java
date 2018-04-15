@@ -3,7 +3,7 @@ package com.joaovenancio;
 public class Main {
 
     public static void main(String[] args) {
-        ListaOrdenada lista1 = new ListaOrdenada<Pessoa>();
+        ListaOrdenada lista1 = new ListaOrdenada<Pessoa>(); //ListaOrdenada
 
         lista1.inserirOrdenado(new Pessoa("Trevor"));
         lista1.inserirOrdenado(new Pessoa("Juquinha"));
@@ -49,7 +49,7 @@ public class Main {
         System.out.println("-----------NOVA LISTA---------");
         System.out.println();
 
-        ListaOrdenada<Pessoa> falcon = new ListaOrdenada<Pessoa>();
+        ListaOrdenada<Pessoa> falcon = new ListaOrdenada<Pessoa>(); //Lista Ordenada
 
         Pessoa han = new Pessoa("Han Solo");
         han.setiD(10);
