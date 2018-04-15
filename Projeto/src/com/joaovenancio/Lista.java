@@ -129,15 +129,18 @@ public class Lista<E extends IOrdenavel> {
             DadoLista<E> auxiliarPesquisa = new DadoLista<E>(null, null); //Criar um novo objeto para servir de stop par o loop
             auxiliarPesquisa.setDadoID(ID);
             this.ultimoLista.setProximoDado(auxiliarPesquisa);//Setar o ultimo dado da lista para ser o dado de pesquisa: se ele encontrar o valor antes e nao for o objeto que inserimos, entao encontramos o objeto desejado
-            while (auxiliarPesquisa.getDadoID() != ID) { //Procurar pelo ID
-                auxiliarPesquisa = auxiliarPesquisa.getProximo();
+
+            DadoLista<E> auxiliarIterador = this.primeiroLista;
+
+            while (auxiliarIterador.getDadoID() != ID) { //Procurar pelo ID
+                auxiliarIterador = auxiliarIterador.getProximo();
             }
-            if (auxiliarPesquisa.equals(this.ultimoLista.getProximo())) { //Se parou no dado que inserimos no fim da lista:
+            if (auxiliarIterador.equals(this.ultimoLista.getProximo())) { //Se parou no dado que inserimos no fim da lista:
                 this.ultimoLista.setProximoDado(null);
                 throw new RuntimeException("Não foi encontrado o dado desejado na Lista.");
             } else { //Caso encontrar o dado antes:
                 this.ultimoLista.setProximoDado(null);
-                return auxiliarPesquisa;
+                return auxiliarIterador;
             }
         }
     }

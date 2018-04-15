@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         ListaOrdenada listaOrd = new ListaOrdenada<Pessoa>();
 
-        /*listaOrd.inserirOrdenado(new Pessoa("Trevor"));
+        listaOrd.inserirOrdenado(new Pessoa("Trevor"));
         listaOrd.inserirOrdenado(new Pessoa("Juquinha"));
         listaOrd.inserirOrdenado(new Pessoa("Legolas"));
         listaOrd.inserirOrdenado(new Pessoa("Gimil"));
@@ -22,6 +22,8 @@ public class Main {
         listaOrd.printarLista();
         System.out.println();
         System.out.println(listaOrd.getQtdElementos());
+        Pessoa peeps = (Pessoa) listaOrd.buscar(2);
+        peeps.dizerOi();
 
         System.out.println();
         System.out.println("--------------------");
@@ -45,11 +47,11 @@ public class Main {
 
         System.out.println();
         System.out.println("--------------------");
-        System.out.println();*/
+        System.out.println();
 
 
 
-        Pessoa pessoa = new Pessoa("Tatiana");
+        /*Pessoa pessoa = new Pessoa("Tatiana");
         pessoa.setiD(5000);
         Pessoa lepo = new Pessoa("Lepo");
         lepo.setiD(5020);
@@ -99,6 +101,9 @@ public class Main {
         listaOrd.printarLista();
         System.out.println();
         System.out.println(listaOrd.getQtdElementos());
+
+        Pessoa peps = (Pessoa) listaOrd.buscar(5001);
+        peps.dizerOi();*/
 
 
 
