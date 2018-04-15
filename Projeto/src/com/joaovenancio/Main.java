@@ -3,112 +3,97 @@ package com.joaovenancio;
 public class Main {
 
     public static void main(String[] args) {
-        ListaOrdenada listaOrd = new ListaOrdenada<Pessoa>();
+        ListaOrdenada lista1 = new ListaOrdenada<Pessoa>();
 
-        listaOrd.inserirOrdenado(new Pessoa("Trevor"));
-        listaOrd.inserirOrdenado(new Pessoa("Juquinha"));
-        listaOrd.inserirOrdenado(new Pessoa("Legolas"));
-        listaOrd.inserirOrdenado(new Pessoa("Gimil"));
-        listaOrd.inserirOrdenado(new Pessoa("Gandalf"));
+        lista1.inserirOrdenado(new Pessoa("Trevor"));
+        lista1.inserirOrdenado(new Pessoa("Juquinha"));
+        lista1.inserirOrdenado(new Pessoa("Legolas"));
+        lista1.inserirOrdenado(new Pessoa("Gimil"));
+        lista1.inserirOrdenado(new Pessoa("Gandalf"));
         Pessoa pessoa = new Pessoa("Tatiana");
         pessoa.setiD(5000);
         Pessoa lepo = new Pessoa("Lepo");
         lepo.setiD(5020);
         Pessoa boris = new Pessoa("Boris");
         boris.setiD(5010);
-        listaOrd.inserirOrdenado(pessoa);
-        listaOrd.inserirOrdenado(lepo);
-        listaOrd.inserirOrdenado(boris);
-        listaOrd.printarLista();
+        lista1.inserirOrdenado(pessoa);
+        lista1.inserirOrdenado(lepo);
+        lista1.inserirOrdenado(boris);
+        lista1.printarLista();
         System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
-        Pessoa peeps = (Pessoa) listaOrd.buscar(2);
+        System.out.println(lista1.getQtdElementos());
+        Pessoa peeps = (Pessoa) lista1.buscar(2);
         peeps.dizerOi();
 
         System.out.println();
         System.out.println("--------------------");
         System.out.println();
 
-        listaOrd.excluir(3);
-        listaOrd.excluir(5020);
-        listaOrd.printarLista();
+        lista1.excluir(3);
+        lista1.excluir(5020);
+        lista1.printarLista();
         System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
-
-        System.out.println();
-        System.out.println("--------------------");
-        System.out.println();
-
-        listaOrd.excluir(0);
-        listaOrd.excluir(2);
-        listaOrd.printarLista();
-        System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
+        System.out.println(lista1.getQtdElementos());
 
         System.out.println();
         System.out.println("--------------------");
         System.out.println();
 
-
-
-        /*Pessoa pessoa = new Pessoa("Tatiana");
-        pessoa.setiD(5000);
-        Pessoa lepo = new Pessoa("Lepo");
-        lepo.setiD(5020);
-        Pessoa boris = new Pessoa("Boris");
-        boris.setiD(5010);
-        Pessoa vader = new Pessoa("Vader");
-        pessoa.setiD(0);
-        Pessoa luke = new Pessoa("Luke");
-        lepo.setiD(5001);
-        Pessoa leia = new Pessoa("Leia");
-        boris.setiD(5);
-        listaOrd.inserirOrdenado(pessoa);
-        listaOrd.inserirOrdenado(lepo);
-        listaOrd.inserirOrdenado(boris);
-        listaOrd.inserirOrdenado(vader);
-        listaOrd.inserirOrdenado(luke);
-        listaOrd.inserirOrdenado(leia);
-        listaOrd.printarLista();
+        lista1.excluir(0);
+        lista1.excluir(2);
+        lista1.printarLista();
         System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
-        listaOrd.excluir(3);
-        listaOrd.excluir(0);
-        listaOrd.excluir(5001);
-        System.out.println();
-        System.out.println("--------------------");
-        System.out.println();
-        listaOrd.printarLista();
-        System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
+        System.out.println(lista1.getQtdElementos());
 
         System.out.println();
-        System.out.println("--------------------");
+        System.out.println("-----------NOVA LISTA---------");
         System.out.println();
 
-        Pessoa p = new Pessoa("Tatiana");
-        pessoa.setiD(5000);
-        Pessoa bo = new Pessoa("Boris");
-        boris.setiD(5010);
-        Pessoa lu = new Pessoa("Luke");
-        lepo.setiD(5001);
-        Pessoa le = new Pessoa("Leia");
-        boris.setiD(5001);
-        listaOrd.inserirOrdenado(lu);
-        listaOrd.inserirOrdenado(bo);
-        listaOrd.inserirOrdenado(le);
-        listaOrd.inserirOrdenado(p);
-        listaOrd.printarLista();
+        ListaOrdenada<Pessoa> falcon = new ListaOrdenada<Pessoa>();
+
+        Pessoa han = new Pessoa("Han Solo");
+        han.setiD(10);
+        Pessoa chew = new Pessoa("Chewabacca");
+        chew.setiD(11);
+        Pessoa ben = new Pessoa ("Obi Wan") ;
+        ben.setiD(3);
+        Pessoa luke = new Pessoa ("Luke");
+        luke.setiD(0);
+
+        falcon.inserirOrdenado(han);
+        falcon.inserirOrdenado(chew);
+        falcon.inserirOrdenado(ben);
+        falcon.inserirOrdenado(luke);
+
+        System.out.println(han.getID());
+        System.out.println(chew.getID());
+        System.out.println(ben.getID());
+        System.out.println(luke.getID());
+
         System.out.println();
-        System.out.println(listaOrd.getQtdElementos());
 
-        Pessoa peps = (Pessoa) listaOrd.buscar(5001);
-        peps.dizerOi();*/
+        falcon.printarLista();
+        System.out.println();
+        System.out.println(falcon.getQtdElementos());
+        falcon.buscar(10).dizerOi();
+
+        falcon.excluir(0);
+        falcon.excluir(3);
+        falcon.printarLista();
+        System.out.println();
+        System.out.println(falcon.getQtdElementos());
+
+        System.out.println();
 
 
-
-
-
-
+        Pessoa storm = new Pessoa("Stormtrooper");
+        storm.setiD(5);
+        falcon.inserirOrdenado(storm);
+        Pessoa vad = new Pessoa("Darth Vader");
+        vad.setiD(20);
+        falcon.inserirOrdenado(vad);
+        falcon.printarLista();
+        System.out.println();
+        System.out.println(falcon.getQtdElementos());
     }
 }

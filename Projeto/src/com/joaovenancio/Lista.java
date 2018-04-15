@@ -145,6 +145,10 @@ public class Lista<E extends IOrdenavel> {
         }
     }
 
+    public DadoLista<E> getPrimeiroLista() {
+        return this.primeiroLista;
+    }
+
     public int getQtdElementos () {
         return this.qtdElementos;
     }

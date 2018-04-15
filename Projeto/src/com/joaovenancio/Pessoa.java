@@ -16,7 +16,7 @@ public class Pessoa implements IOrdenavel {
 
     //Metodos:
     public void dizerOi () {
-        System.out.println(this.nome+"de ID="+this.ID+" disse oi!");
+        System.out.println(this.nome+" de ID="+this.ID+" disse oi!");
     }
 
     public void setiD (int ID) {

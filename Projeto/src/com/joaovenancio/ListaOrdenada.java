@@ -14,7 +14,9 @@ public class ListaOrdenada<E extends IOrdenavel> {
         if (objetoParaInserir.getID() < 0) {
             throw new RuntimeException("Só é aceito IDs positivos.");
         } else if (objetoParaInserir.getID() == 0) {
-            this.lista.inserirDepoisDe(0,objetoParaInserir);
+            this.lista.inserirNoInicio(objetoParaInserir);
+        } else if (this.lista != null && this.lista.getPrimeiroLista() != null && (objetoParaInserir.getID() <= this.lista.getPrimeiroLista().getDado().getID())) {
+            this.lista.inserirNoInicio(objetoParaInserir);
         } else {
             this.lista.inserirDepoisDe(objetoParaInserir.getID(), objetoParaInserir);
         }
